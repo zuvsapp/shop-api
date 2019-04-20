@@ -1,5 +1,5 @@
 # Alpine Linux with OpenJDK JRE
-FROM openjdk:8-jre-alpine
+FROM maven:3.5.2-jdk-8-alpine
 
 # copy JAR into image
 COPY target/shop-api.jar /shop-api.jar
