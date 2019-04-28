@@ -1,10 +1,12 @@
 version: 2
 jobs:
   build:
+    working_directory: /app
     docker:
       - image: maven:3.5.2-jdk-8-alpine
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: Runs unit tests and packages application
           command: mvn package
