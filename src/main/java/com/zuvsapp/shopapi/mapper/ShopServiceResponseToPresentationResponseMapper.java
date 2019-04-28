@@ -6,7 +6,7 @@ import com.zuvsapp.shopapi.model.ShopPresentationResponse;
 import com.zuvsapp.shopapi.service.model.ShopServiceResponse;
 
 @Mapper
-public interface ShopServiceResponseToPresentationReponseMapper {
+public interface ShopServiceResponseToPresentationResponseMapper {
 
     ShopPresentationResponse shopServiceResponseToPresentationResponseMapper(ShopServiceResponse shopView);
 }

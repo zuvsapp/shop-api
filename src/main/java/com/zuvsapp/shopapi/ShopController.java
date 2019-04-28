@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.zuvsapp.shopapi.mapper.ShopServiceResponseToPresentationReponseMapper;
+import com.zuvsapp.shopapi.mapper.ShopServiceResponseToPresentationResponseMapper;
 import com.zuvsapp.shopapi.model.ShopPresentationResponse;
 import com.zuvsapp.shopapi.service.ShopService;
 import com.zuvsapp.shopapi.service.model.ShopServiceResponse;
@@ -25,7 +25,7 @@ public class ShopController {
         this.shopService = shopService;
     }
 
-    private ShopServiceResponseToPresentationReponseMapper MAPPER = Mappers.getMapper(ShopServiceResponseToPresentationReponseMapper.class);
+    private ShopServiceResponseToPresentationResponseMapper MAPPER = Mappers.getMapper(ShopServiceResponseToPresentationResponseMapper.class);
 
     @GetMapping(path="/shop/{id}")
     public ResponseEntity<ShopPresentationResponse> getShopById(@PathVariable("id") String id) {
