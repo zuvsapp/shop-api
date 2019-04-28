@@ -12,4 +12,6 @@ jobs:
           command: mvn package
       - run:
           name: Build and push Docker image
-          command: "mvn dockerfile:push"
+          command: |
+            echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+            mvn dockerfile:push
