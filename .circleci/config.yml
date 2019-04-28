@@ -1,8 +1,10 @@
 version: 2
 jobs:
   build:
-    docker: # use the docker executor type; machine and macos executors are also supported
-      - image: maven:3.5.2-jdk-8-alpine # the primary container, where your job's commands are run
+    docker:
+      - image: maven:3.5.2-jdk-8-alpine
     steps:
-      - checkout # check out the code in the project directory
-      - run: mvn package # run the `echo` command
+      - checkout
+      - run:
+          name: Runs unit tests and packages application
+          command: mvn package
