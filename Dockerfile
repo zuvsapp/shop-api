@@ -5,4 +5,4 @@ FROM openjdk:8-jre-alpine
 COPY target/shop-api.jar /shop-api.jar
 
 # run application with this command line
-CMD ["/usr/bin/java", "-jar", "-Dspring.profiles.active=default", "/shop-api.jar"]
+CMD ["/usr/bin/java", "-jar", "/shop-api.jar"]
