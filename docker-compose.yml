@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  shop-database:
+    image: shop-database
+    container_name: shop-database
+    build:
+      context: ${ZUVSAPP}/shop-database
+      dockerfile: Dockerfile
+    ports:
+      - "27017:27017"
+
+  shop-api:
+    image: shop-api
+    container_name: shop-api
+    build:
+      context: ${ZUVSAPP}/shop-api
+      dockerfile: Dockerfile
+    ports:
+      - "9000:9000"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://shop-database:27017/shop
